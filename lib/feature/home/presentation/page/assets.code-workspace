@@ -1,0 +1,17 @@
+{
+	"folders": [
+		{
+			"name": "assets",
+			"path": "../../../../../../parole_de_vie_tv/assets"
+		},
+		{
+			"name": "lpdv_tv",
+			"path": "../../../../.."
+		},
+		{
+			"name": "lib",
+			"path": "../../../../../../parole_de_vie_tv/lib"
+		}
+	],
+	"settings": {}
+}
