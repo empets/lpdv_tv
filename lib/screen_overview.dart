@@ -4,6 +4,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:lpdv_tv/core/app_color/app_color.dart';
+import 'package:lpdv_tv/feature/auth/live/live_screen.dart';
 import 'package:lpdv_tv/feature/home/presentation/page/home_screen.dart';
 import 'package:lpdv_tv/gen/assets.gen.dart';
 
@@ -29,8 +30,8 @@ class _OverviewScreenState extends State<OverviewScreen> {
         top: true,
         child: RefreshIndicator(
           onRefresh: () async {},
-          color: MyColors.primaryBlue,
-          child: IndexedStack(index: _currentIndex, children: [HomeScreen()]),
+          color: MyColors.primaryOrange,
+          child: IndexedStack(index: _currentIndex, children: [HomeScreen(), LiveSreen()]),
         ),
       ),
       bottomNavigationBar: BottomNavigationBar(

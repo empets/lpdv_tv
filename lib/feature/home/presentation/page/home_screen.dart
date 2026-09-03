@@ -4,6 +4,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:lpdv_tv/core/app_color/app_color.dart';
+import 'package:lpdv_tv/feature/home/presentation/page/video_player_screen.dart';
 import 'package:lpdv_tv/gen/assets.gen.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -178,6 +179,14 @@ class HomeScreen extends StatelessWidget {
                         icon: Icons.play_arrow_outlined,
                         iconColor: MyColors.primaryBlack,
                         borderRadius: BorderRadius.circular(16.r),
+                        onTap: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) =>  VideoPlayerScreen(),
+                            ),
+                          );
+                        },
                       ).animate(delay: 350.ms).fadeIn(duration: 600.ms).slideY(
                     begin: 0.2,
                     end: 0,
@@ -290,6 +299,7 @@ class HomeScreen extends StatelessWidget {
                       child: ListView.builder(
                         scrollDirection: Axis.horizontal,
                         itemBuilder: (context, index) => CutomeEventCard(
+                          isPlayerSection: false,
                           isEventNowSection: true,
                           isEmitionSection: false,
                           isFutureEvent: false,
@@ -315,6 +325,7 @@ class HomeScreen extends StatelessWidget {
                       child: ListView.builder(
                         scrollDirection: Axis.horizontal,
                         itemBuilder: (context, index) => CutomeEventCard(
+                          isPlayerSection: false,
                           isEventNowSection: false,
                           isEmitionSection: true,
                           isFutureEvent: false,
@@ -338,6 +349,7 @@ class HomeScreen extends StatelessWidget {
                       child: ListView.builder(
                         scrollDirection: Axis.horizontal,
                         itemBuilder: (context, index) => CutomeEventCard(
+                          isPlayerSection: false,
                           isEventNowSection: false,
                           isEmitionSection: false,
                           isFutureEvent: true,
@@ -474,6 +486,7 @@ class CutomeEventCard extends StatelessWidget {
     this.subdescription,
     required this.isEmitionSection,
     required this.isFutureEvent,
+    required this.isPlayerSection,
   });
   final Color? cardborderColor;
   final bool isEventNowSection;
@@ -484,6 +497,7 @@ class CutomeEventCard extends StatelessWidget {
   late String? subdescription;
   final bool isEmitionSection;
   final bool isFutureEvent;
+  final bool isPlayerSection;
 
   @override
   Widget build(BuildContext context) {
@@ -726,6 +740,83 @@ class CutomeEventCard extends StatelessWidget {
                       ],
                     ),
                   ],
+
+                   if (isPlayerSection) ...[
+                    Align(
+                      alignment: Alignment.centerRight,
+                      child: CustomeCardWithTextAndIcon(
+                        text: eventNowDuration ?? '',
+                        style: GoogleFonts.inter(
+                          color: MyColors.primaryWhite,
+                          fontSize: 8.sp,
+                          fontWeight: FontWeight.w700,
+                        ),
+                        borderColor: Border.all(color: Colors.black26),
+                        backgroundColor: Colors.white24,
+                        withIcon: true,
+                        icon: Icons.access_time_rounded,
+                        iconColor: MyColors.primaryWhite,
+                        padding: EdgeInsets.symmetric(
+                          horizontal: 7.w,
+                          vertical: 4.h,
+                        ),
+                        borderRadius: BorderRadius.circular(16.r),
+                        iconSize: 12.sp,
+                      ),
+                    ),
+                    SizedBox(height: .1.sh),
+               
+                  
+
+                    Container(
+                      width: 0.6.sw,
+                      decoration: BoxDecoration(
+                        color: Colors.black.withValues(alpha: 0.5),
+                        borderRadius: BorderRadius.circular(12.r),
+                        gradient: LinearGradient(
+                          begin: Alignment.topCenter,
+                          end: Alignment.bottomCenter,
+                          colors: [
+                            Color(0xFF050814).withValues(alpha: 0.2),
+                            Color(0xFF050814).withValues(alpha: 0.3),
+                            Color(0xFF050814),
+                            Color(0xFF050814),
+                          ],
+                          stops: const [
+                            0.47, // milieu du gris
+                            0.52, // fin du gris
+                            0.58, // blanc commence
+                            1.0, // blanc pur
+                          ],
+                        ),
+                      ),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            title ?? '',
+                            style: GoogleFonts.inter(
+                              color: MyColors.primaryWhite,
+                              fontSize: 12.sp,
+                              fontWeight: FontWeight.w700,
+                            ),
+                          ),
+                          SizedBox(height: 3.h),
+                          Text(
+                            description ?? '',
+                            style: GoogleFonts.inter(
+                              color: Color(0xFF8A8A8A),
+                              fontSize: 9.sp,
+                              fontWeight: FontWeight.w400,
+                            ),
+                            maxLines: 2,
+                            overflow: TextOverflow.ellipsis,
+                          ),
+                        ],
+                      ),
+                    ),
+                  ],
+
                 ],
               ),
             ),
@@ -767,6 +858,7 @@ class CustomeCardWithTextAndIcon extends StatelessWidget {
     this.padding,
     this.borderRadius,
     this.iconSize,
+    this.onTap,
   });
 
   final String text;
@@ -780,38 +872,42 @@ class CustomeCardWithTextAndIcon extends StatelessWidget {
   final EdgeInsetsGeometry? padding;
   final BorderRadiusGeometry? borderRadius;
   final double? iconSize;
+  final void Function()? onTap;
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      padding: padding ?? EdgeInsets.symmetric(horizontal: 8.w, vertical: 4.h),
-      decoration: BoxDecoration(
-        color: backgroundColor,
-        border: borderColor ?? Border.all(color: backgroundColor),
-        borderRadius: borderRadius ?? BorderRadius.circular(12.r),
-      ),
-      child: Row(
-        mainAxisSize: MainAxisSize.min,
-        children: [
-          if (withIcon) ...[
-            Icon(
-              icon,
-              color: iconColor ?? Colors.amber,
-              size: iconSize ?? 16.sp,
+    return GestureDetector(
+      onTap: onTap,
+      child: Container(
+        padding: padding ?? EdgeInsets.symmetric(horizontal: 8.w, vertical: 4.h),
+        decoration: BoxDecoration(
+          color: backgroundColor,
+          border: borderColor ?? Border.all(color: backgroundColor),
+          borderRadius: borderRadius ?? BorderRadius.circular(12.r),
+        ),
+        child: Row(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            if (withIcon) ...[
+              Icon(
+                icon,
+                color: iconColor ?? Colors.amber,
+                size: iconSize ?? 16.sp,
+              ),
+              SizedBox(width: 4.w),
+            ],
+            Text(
+              text,
+              style:
+                  style ??
+                  GoogleFonts.inter(
+                    color: textColor ?? Colors.black,
+                    fontSize: 12.sp,
+                    fontWeight: FontWeight.w400,
+                  ),
             ),
-            SizedBox(width: 4.w),
           ],
-          Text(
-            text,
-            style:
-                style ??
-                GoogleFonts.inter(
-                  color: textColor ?? Colors.black,
-                  fontSize: 12.sp,
-                  fontWeight: FontWeight.w400,
-                ),
-          ),
-        ],
+        ),
       ),
     );
   }
