@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:flutter_svg/svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:lpdv_tv/core/app_color/app_color.dart';
 import 'package:lpdv_tv/feature/home/presentation/page/home_screen.dart';
+import 'package:lpdv_tv/feature/home/presentation/page/widget/custome_moove_player.dart';
 import 'package:lpdv_tv/gen/assets.gen.dart';
 
 class VideoPlayerScreen extends StatelessWidget {
@@ -23,59 +23,62 @@ class VideoPlayerScreen extends StatelessWidget {
         child: SingleChildScrollView(
           child: Column(
             children: [
+               CustomVideoPlayer(
+          url: 'https://www.w3schools.com/html/mov_bbb.mp4',
+        ),
               
-              Stack(
-                children: [
-                  Container(
-                    decoration: BoxDecoration(
-                      border: Border.all(color: Colors.transparent),
-                      borderRadius: BorderRadius.circular(12.r),
-                    ),
-                    child: ClipRRect(
-                      // borderRadius: BorderRadius.circular(12.r),
-                      child: Stack(
-                        children: [
-                          Image.asset(
-                            Assets.images.iconHome.image2.path,
-                            fit: BoxFit.cover,
-                            height: 0.3.sh,
-                            width: double.infinity,
-                          ),
-                          Container(
-                            height: 0.3.sh,
-                            width: double.infinity,
-                            decoration: BoxDecoration(
-                              gradient: LinearGradient(
-                                begin: Alignment.topCenter,
-                                end: Alignment.bottomCenter,
-                                colors: [
-                                  Colors.transparent,
-                                  Color(0xFF050814).withValues(alpha: 0.9),
-                                ],
-                              ),
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                  ),
-                  // Positioned(
-                  //   top: 10.r,
-                  //   left: 10.r,
-                  //   child: CustomeBackNavigator(),
-                  // ),
-                  Positioned(
-                    top: 0,
-                    bottom: 0,
-                    right: 0.45.sw,
-                    child: CutomePlayButton(),
-                  ),
-                ],
-              ),
-              Divider(
-                height: 0.7.h,
-                color: MyColors.primaryGray.withValues(alpha: 0.4),
-              ),
+              // Stack(
+              //   children: [
+              //     Container(
+              //       decoration: BoxDecoration(
+              //         border: Border.all(color: Colors.transparent),
+              //         borderRadius: BorderRadius.circular(12.r),
+              //       ),
+              //       child: ClipRRect(
+              //         // borderRadius: BorderRadius.circular(12.r),
+              //         child: Stack(
+              //           children: [
+              //             Image.asset(
+              //               Assets.images.iconHome.image2.path,
+              //               fit: BoxFit.cover,
+              //               height: 0.3.sh,
+              //               width: double.infinity,
+              //             ),
+              //             Container(
+              //               height: 0.3.sh,
+              //               width: double.infinity,
+              //               decoration: BoxDecoration(
+              //                 gradient: LinearGradient(
+              //                   begin: Alignment.topCenter,
+              //                   end: Alignment.bottomCenter,
+              //                   colors: [
+              //                     Colors.transparent,
+              //                     Color(0xFF050814).withValues(alpha: 0.9),
+              //                   ],
+              //                 ),
+              //               ),
+              //             ),
+              //           ],
+              //         ),
+              //       ),
+              //     ),
+              //     // Positioned(
+              //     //   top: 10.r,
+              //     //   left: 10.r,
+              //     //   child: CustomeBackNavigator(),
+              //     // ),
+              //     Positioned(
+              //       top: 0,
+              //       bottom: 0,
+              //       right: 0.45.sw,
+              //       child: CutomePlayButton(),
+              //     ),
+              //   ],
+              // ),
+              // Divider(
+              //   height: 0.7.h,
+              //   color: MyColors.primaryGray.withValues(alpha: 0.4),
+              // ),
 
               Container(
                 margin: EdgeInsets.symmetric(vertical: 16.h),

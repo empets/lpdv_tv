@@ -19,60 +19,7 @@ class HomeScreen extends StatelessWidget {
           child: Column(
             children: [
               // SizedBox(height: 24.h),
-              Container(
-                padding: EdgeInsets.symmetric(horizontal: 12.w, vertical: 8.h),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    RichText(
-                      text: TextSpan(
-                        children: [
-                          TextSpan(
-                            text: "LPDV ",
-                            style: GoogleFonts.inter(
-                              color: Colors.white,
-                              fontSize: 22.sp,
-                              fontWeight: FontWeight.w800,
-                            ),
-                          ),
-                          TextSpan(
-                            text: "TV",
-                            style: GoogleFonts.inter(
-                              color: MyColors.primaryOrange,
-                              fontSize: 22.sp,
-                              fontWeight: FontWeight.w800,
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-
-                    Row(
-                      children: [
-                        SvgPicture.asset(Assets.images.iconHome.iconSearch),
-                        SizedBox(width: 16.w),
-                        SvgPicture.asset(
-                          Assets.images.iconHome.iconNotification,
-                        ),
-                        SizedBox(width: 7.w),
-                        // Container(
-                        //       padding: EdgeInsets.all(5.w),
-                        //       decoration: BoxDecoration(
-                        //         color: MyColors.primaryOrange,
-                        //         shape: BoxShape.circle,
-                        //       ),
-                        //       child: SvgPicture.asset(
-                        //         Assets.images.iconHome.iconHeart,
-                        //       ),
-                        //     )
-                        //     .animate(delay: 350.ms)
-                        //     .fadeIn(duration: 600.ms)
-                        //     .slideY(begin: 0.2, end: 0),
-                      ],
-                    ),
-                  ],
-                ),
-              ),
+              CustomeAppHeader(),
               SizedBox(height: 7.h),
 
               Container(
@@ -427,6 +374,70 @@ class HomeScreen extends StatelessWidget {
             ],
           ),
         ),
+      ),
+    );
+  }
+}
+
+class CustomeAppHeader extends StatelessWidget {
+  const CustomeAppHeader({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      padding: EdgeInsets.symmetric(horizontal: 12.w, vertical: 8.h),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          RichText(
+            text: TextSpan(
+              children: [
+                TextSpan(
+                  text: "LPDV ",
+                  style: GoogleFonts.inter(
+                    color: Colors.white,
+                    fontSize: 22.sp,
+                    fontWeight: FontWeight.w800,
+                  ),
+                ),
+                TextSpan(
+                  text: "TV",
+                  style: GoogleFonts.inter(
+                    color: MyColors.primaryOrange,
+                    fontSize: 22.sp,
+                    fontWeight: FontWeight.w800,
+                  ),
+                ),
+              ],
+            ),
+          ),
+    
+          Row(
+            children: [
+              SvgPicture.asset(Assets.images.iconHome.iconSearch),
+              SizedBox(width: 16.w),
+              SvgPicture.asset(
+                Assets.images.iconHome.iconNotification,
+              ),
+              SizedBox(width: 7.w),
+              // Container(
+              //       padding: EdgeInsets.all(5.w),
+              //       decoration: BoxDecoration(
+              //         color: MyColors.primaryOrange,
+              //         shape: BoxShape.circle,
+              //       ),
+              //       child: SvgPicture.asset(
+              //         Assets.images.iconHome.iconHeart,
+              //       ),
+              //     )
+              //     .animate(delay: 350.ms)
+              //     .fadeIn(duration: 600.ms)
+              //     .slideY(begin: 0.2, end: 0),
+            ],
+          ),
+        ],
       ),
     );
   }
@@ -828,17 +839,26 @@ class CutomeEventCard extends StatelessWidget {
 }
 
 class CutomePlayButton extends StatelessWidget {
-  const CutomePlayButton({super.key});
+  const CutomePlayButton({super.key, this.onTap, this.isPlaying = false});
+
+  final VoidCallback? onTap;
+  final bool isPlaying;
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      padding: EdgeInsets.all(8.w),
-      decoration: BoxDecoration(
-        color: MyColors.primaryOrange,
-        shape: BoxShape.circle,
+    return GestureDetector(
+      onTap: onTap,
+      child: Container(
+        padding: EdgeInsets.all(8.w),
+        decoration: BoxDecoration(
+          color: MyColors.primaryOrange,
+          shape: BoxShape.circle,
+        ),
+        child: Icon(
+          isPlaying ? Icons.pause : Icons.play_arrow,
+          color: MyColors.primaryBlack,
+        ),
       ),
-      child: Icon(Icons.play_arrow_outlined, color: MyColors.primaryBlack),
     );
   }
 }

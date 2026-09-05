@@ -4,8 +4,9 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:lpdv_tv/core/app_color/app_color.dart';
-import 'package:lpdv_tv/feature/auth/live/live_screen.dart';
+import 'package:lpdv_tv/feature/live/live_screen.dart';
 import 'package:lpdv_tv/feature/home/presentation/page/home_screen.dart';
+import 'package:lpdv_tv/feature/view_more/prensentation/page/view_more_screen.dart';
 import 'package:lpdv_tv/gen/assets.gen.dart';
 
 class OverviewScreen extends StatefulWidget {
@@ -31,7 +32,7 @@ class _OverviewScreenState extends State<OverviewScreen> {
         child: RefreshIndicator(
           onRefresh: () async {},
           color: MyColors.primaryOrange,
-          child: IndexedStack(index: _currentIndex, children: [HomeScreen(), LiveSreen()]),
+          child: IndexedStack(index: _currentIndex, children: [HomeScreen(), LiveSreen(isActive: _currentIndex == 1), Container(), ViewMoreScreen()]),
         ),
       ),
       bottomNavigationBar: BottomNavigationBar(
@@ -66,23 +67,13 @@ class _OverviewScreenState extends State<OverviewScreen> {
             ),
             label: 'En direct',
           ),
-          BottomNavigationBarItem(
-            backgroundColor: MyColors.primaryBlack,
-            icon: SvgPicture.asset(
-              Assets.images.iconHome.iconSearch,
-              colorFilter: ColorFilter.mode(
-                _currentIndex == 2 ? MyColors.primaryOrange : Colors.white,
-                BlendMode.srcIn,
-              ),
-            ),
-            label: 'Explorer',
-          ),
+      
           BottomNavigationBarItem(
             backgroundColor: MyColors.primaryBlue,
             icon: SvgPicture.asset(
               Assets.images.iconBible.iconBible,
               colorFilter: ColorFilter.mode(
-                _currentIndex == 3 ? MyColors.primaryOrange : Colors.white,
+                _currentIndex == 2 ? MyColors.primaryOrange : Colors.white,
                 BlendMode.srcIn,
               ),
             ),

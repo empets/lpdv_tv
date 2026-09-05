@@ -121,12 +121,60 @@ class $AssetsImagesIconLivingGen {
 class $AssetsImagesIconPlusGen {
   const $AssetsImagesIconPlusGen();
 
-  /// File path: assets/images/icon_plus/icon_more.png
-  AssetGenImage get iconMore =>
-      const AssetGenImage('assets/images/icon_plus/icon_more.png');
+  /// File path: assets/images/icon_plus/church.png
+  AssetGenImage get church =>
+      const AssetGenImage('assets/images/icon_plus/church.png');
+
+  /// File path: assets/images/icon_plus/icon_calendar.svg
+  String get iconCalendar => 'assets/images/icon_plus/icon_calendar.svg';
+
+  /// File path: assets/images/icon_plus/icon_church.svg
+  String get iconChurch => 'assets/images/icon_plus/icon_church.svg';
+
+  /// File path: assets/images/icon_plus/icon_demande_priere.svg
+  String get iconDemandePriere =>
+      'assets/images/icon_plus/icon_demande_priere.svg';
+
+  /// File path: assets/images/icon_plus/icon_gift.svg
+  String get iconGift => 'assets/images/icon_plus/icon_gift.svg';
+
+  /// File path: assets/images/icon_plus/icon_intervenant.svg
+  String get iconIntervenant => 'assets/images/icon_plus/icon_intervenant.svg';
+
+  /// File path: assets/images/icon_plus/icon_librayrie.svg
+  String get iconLibrayrie => 'assets/images/icon_plus/icon_librayrie.svg';
+
+  /// File path: assets/images/icon_plus/icon_more.svg
+  String get iconMore => 'assets/images/icon_plus/icon_more.svg';
+
+  /// File path: assets/images/icon_plus/icon_partenaire.svg
+  String get iconPartenaire => 'assets/images/icon_plus/icon_partenaire.svg';
+
+  /// File path: assets/images/icon_plus/icon_play.svg
+  String get iconPlay => 'assets/images/icon_plus/icon_play.svg';
+
+  /// File path: assets/images/icon_plus/icon_playe_video.png
+  AssetGenImage get iconPlayeVideo =>
+      const AssetGenImage('assets/images/icon_plus/icon_playe_video.png');
+
+  /// File path: assets/images/icon_plus/icon_video_player.svg
+  String get iconVideoPlayer => 'assets/images/icon_plus/icon_video_player.svg';
 
   /// List of all assets
-  List<AssetGenImage> get values => [iconMore];
+  List<dynamic> get values => [
+    church,
+    iconCalendar,
+    iconChurch,
+    iconDemandePriere,
+    iconGift,
+    iconIntervenant,
+    iconLibrayrie,
+    iconMore,
+    iconPartenaire,
+    iconPlay,
+    iconPlayeVideo,
+    iconVideoPlayer,
+  ];
 }
 
 abstract final class Assets {

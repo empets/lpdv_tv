@@ -7,6 +7,8 @@ list(APPEND FLUTTER_PLUGIN_LIST
   flutter_doc_scanner
   flutter_secure_storage_linux
   gtk
+  media_kit_libs_linux
+  media_kit_video
   printing
   url_launcher_linux
 )
