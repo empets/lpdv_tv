@@ -722,6 +722,9 @@ class _CustomVideoPlayerState extends State<CustomVideoPlayer> {
         await Future.delayed(const Duration(milliseconds: 500));
         await _player.play();
       }
+      else if(!widget.autoPlay) {
+        await _player.pause();
+      }
 
       debugPrint('✅ Vidéo chargée: ${widget.url}');
     } catch (e) {
