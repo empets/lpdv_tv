@@ -9,7 +9,10 @@
 // ignore_for_file: type=lint
 // ignore_for_file: deprecated_member_use,directives_ordering,implicit_dynamic_list_literal,unnecessary_import
 
+import 'package:flutter/services.dart';
 import 'package:flutter/widgets.dart';
+import 'package:flutter_svg/flutter_svg.dart' as _svg;
+import 'package:vector_graphics/vector_graphics.dart' as _vg;
 
 class $AssetsImagesGen {
   const $AssetsImagesGen();
@@ -26,27 +29,33 @@ class $AssetsImagesGen {
 
   /// Directory path: assets/images/icon_plus
   $AssetsImagesIconPlusGen get iconPlus => const $AssetsImagesIconPlusGen();
+
+  /// Directory path: assets/images/luncher_icon
+  $AssetsImagesLuncherIconGen get luncherIcon =>
+      const $AssetsImagesLuncherIconGen();
 }
 
 class $AssetsImagesIconBibleGen {
   const $AssetsImagesIconBibleGen();
 
   /// File path: assets/images/icon_bible/icon_bible.svg
-  String get iconBible => 'assets/images/icon_bible/icon_bible.svg';
+  SvgGenImage get iconBible =>
+      const SvgGenImage('assets/images/icon_bible/icon_bible.svg');
 
   /// List of all assets
-  List<String> get values => [iconBible];
+  List<SvgGenImage> get values => [iconBible];
 }
 
 class $AssetsImagesIconHomeGen {
   const $AssetsImagesIconHomeGen();
 
   /// File path: assets/images/icon_home/icon_heart.svg
-  String get iconHeart => 'assets/images/icon_home/icon_heart.svg';
+  SvgGenImage get iconHeart =>
+      const SvgGenImage('assets/images/icon_home/icon_heart.svg');
 
   /// File path: assets/images/icon_home/icon_notification.svg
-  String get iconNotification =>
-      'assets/images/icon_home/icon_notification.svg';
+  SvgGenImage get iconNotification =>
+      const SvgGenImage('assets/images/icon_home/icon_notification.svg');
 
   /// File path: assets/images/icon_home/icon_personne_free.png
   AssetGenImage get iconPersonneFree =>
@@ -57,10 +66,12 @@ class $AssetsImagesIconHomeGen {
       const AssetGenImage('assets/images/icon_home/icon_personne_frees.png');
 
   /// File path: assets/images/icon_home/icon_play.svg
-  String get iconPlay => 'assets/images/icon_home/icon_play.svg';
+  SvgGenImage get iconPlay =>
+      const SvgGenImage('assets/images/icon_home/icon_play.svg');
 
   /// File path: assets/images/icon_home/icon_search.svg
-  String get iconSearch => 'assets/images/icon_home/icon_search.svg';
+  SvgGenImage get iconSearch =>
+      const SvgGenImage('assets/images/icon_home/icon_search.svg');
 
   /// File path: assets/images/icon_home/image0.png
   AssetGenImage get image0 =>
@@ -112,10 +123,11 @@ class $AssetsImagesIconLivingGen {
   const $AssetsImagesIconLivingGen();
 
   /// File path: assets/images/icon_living/icon_living.svg
-  String get iconLiving => 'assets/images/icon_living/icon_living.svg';
+  SvgGenImage get iconLiving =>
+      const SvgGenImage('assets/images/icon_living/icon_living.svg');
 
   /// List of all assets
-  List<String> get values => [iconLiving];
+  List<SvgGenImage> get values => [iconLiving];
 }
 
 class $AssetsImagesIconPlusGen {
@@ -126,39 +138,48 @@ class $AssetsImagesIconPlusGen {
       const AssetGenImage('assets/images/icon_plus/church.png');
 
   /// File path: assets/images/icon_plus/icon_calendar.svg
-  String get iconCalendar => 'assets/images/icon_plus/icon_calendar.svg';
+  SvgGenImage get iconCalendar =>
+      const SvgGenImage('assets/images/icon_plus/icon_calendar.svg');
 
   /// File path: assets/images/icon_plus/icon_church.svg
-  String get iconChurch => 'assets/images/icon_plus/icon_church.svg';
+  SvgGenImage get iconChurch =>
+      const SvgGenImage('assets/images/icon_plus/icon_church.svg');
 
   /// File path: assets/images/icon_plus/icon_demande_priere.svg
-  String get iconDemandePriere =>
-      'assets/images/icon_plus/icon_demande_priere.svg';
+  SvgGenImage get iconDemandePriere =>
+      const SvgGenImage('assets/images/icon_plus/icon_demande_priere.svg');
 
   /// File path: assets/images/icon_plus/icon_gift.svg
-  String get iconGift => 'assets/images/icon_plus/icon_gift.svg';
+  SvgGenImage get iconGift =>
+      const SvgGenImage('assets/images/icon_plus/icon_gift.svg');
 
   /// File path: assets/images/icon_plus/icon_intervenant.svg
-  String get iconIntervenant => 'assets/images/icon_plus/icon_intervenant.svg';
+  SvgGenImage get iconIntervenant =>
+      const SvgGenImage('assets/images/icon_plus/icon_intervenant.svg');
 
   /// File path: assets/images/icon_plus/icon_librayrie.svg
-  String get iconLibrayrie => 'assets/images/icon_plus/icon_librayrie.svg';
+  SvgGenImage get iconLibrayrie =>
+      const SvgGenImage('assets/images/icon_plus/icon_librayrie.svg');
 
   /// File path: assets/images/icon_plus/icon_more.svg
-  String get iconMore => 'assets/images/icon_plus/icon_more.svg';
+  SvgGenImage get iconMore =>
+      const SvgGenImage('assets/images/icon_plus/icon_more.svg');
 
   /// File path: assets/images/icon_plus/icon_partenaire.svg
-  String get iconPartenaire => 'assets/images/icon_plus/icon_partenaire.svg';
+  SvgGenImage get iconPartenaire =>
+      const SvgGenImage('assets/images/icon_plus/icon_partenaire.svg');
 
   /// File path: assets/images/icon_plus/icon_play.svg
-  String get iconPlay => 'assets/images/icon_plus/icon_play.svg';
+  SvgGenImage get iconPlay =>
+      const SvgGenImage('assets/images/icon_plus/icon_play.svg');
 
   /// File path: assets/images/icon_plus/icon_playe_video.png
   AssetGenImage get iconPlayeVideo =>
       const AssetGenImage('assets/images/icon_plus/icon_playe_video.png');
 
   /// File path: assets/images/icon_plus/icon_video_player.svg
-  String get iconVideoPlayer => 'assets/images/icon_plus/icon_video_player.svg';
+  SvgGenImage get iconVideoPlayer =>
+      const SvgGenImage('assets/images/icon_plus/icon_video_player.svg');
 
   /// List of all assets
   List<dynamic> get values => [
@@ -177,7 +198,24 @@ class $AssetsImagesIconPlusGen {
   ];
 }
 
+class $AssetsImagesLuncherIconGen {
+  const $AssetsImagesLuncherIconGen();
+
+  /// File path: assets/images/luncher_icon/LOGO FINIE.ai
+  String get logoFinie =>
+      'packages/lpdv_tv/assets/images/luncher_icon/LOGO FINIE.ai';
+
+  /// File path: assets/images/luncher_icon/icon_launcher.png
+  AssetGenImage get iconLauncher =>
+      const AssetGenImage('assets/images/luncher_icon/icon_launcher.png');
+
+  /// List of all assets
+  List<dynamic> get values => [logoFinie, iconLauncher];
+}
+
 abstract final class Assets {
+  static const String package = 'lpdv_tv';
+
   static const $AssetsImagesGen images = $AssetsImagesGen();
 }
 
@@ -190,6 +228,8 @@ class AssetGenImage {
   });
 
   final String _assetName;
+
+  static const String package = 'lpdv_tv';
 
   final Size? size;
   final Set<String> flavors;
@@ -215,7 +255,8 @@ class AssetGenImage {
     bool matchTextDirection = false,
     bool gaplessPlayback = true,
     bool isAntiAlias = false,
-    String? package,
+    @Deprecated('Do not specify package for a generated library asset')
+    String? package = package,
     FilterQuality filterQuality = FilterQuality.medium,
     int? cacheWidth,
     int? cacheHeight,
@@ -248,13 +289,17 @@ class AssetGenImage {
     );
   }
 
-  ImageProvider provider({AssetBundle? bundle, String? package}) {
+  ImageProvider provider({
+    AssetBundle? bundle,
+    @Deprecated('Do not specify package for a generated library asset')
+    String? package = package,
+  }) {
     return AssetImage(_assetName, bundle: bundle, package: package);
   }
 
   String get path => _assetName;
 
-  String get keyName => _assetName;
+  String get keyName => 'packages/lpdv_tv/$_assetName';
 }
 
 class AssetGenImageAnimation {
@@ -267,4 +312,81 @@ class AssetGenImageAnimation {
   final bool isAnimation;
   final Duration duration;
   final int frames;
+}
+
+class SvgGenImage {
+  const SvgGenImage(this._assetName, {this.size, this.flavors = const {}})
+    : _isVecFormat = false;
+
+  const SvgGenImage.vec(this._assetName, {this.size, this.flavors = const {}})
+    : _isVecFormat = true;
+
+  final String _assetName;
+  final Size? size;
+  final Set<String> flavors;
+  final bool _isVecFormat;
+
+  static const String package = 'lpdv_tv';
+
+  _svg.SvgPicture svg({
+    Key? key,
+    bool matchTextDirection = false,
+    AssetBundle? bundle,
+    @Deprecated('Do not specify package for a generated library asset')
+    String? package = package,
+    double? width,
+    double? height,
+    BoxFit fit = BoxFit.contain,
+    AlignmentGeometry alignment = Alignment.center,
+    bool allowDrawingOutsideViewBox = false,
+    WidgetBuilder? placeholderBuilder,
+    String? semanticsLabel,
+    bool excludeFromSemantics = false,
+    _svg.SvgTheme? theme,
+    _svg.ColorMapper? colorMapper,
+    ColorFilter? colorFilter,
+    Clip clipBehavior = Clip.hardEdge,
+    @deprecated Color? color,
+    @deprecated BlendMode colorBlendMode = BlendMode.srcIn,
+    @deprecated bool cacheColorFilter = false,
+  }) {
+    final _svg.BytesLoader loader;
+    if (_isVecFormat) {
+      loader = _vg.AssetBytesLoader(
+        _assetName,
+        assetBundle: bundle,
+        packageName: package,
+      );
+    } else {
+      loader = _svg.SvgAssetLoader(
+        _assetName,
+        assetBundle: bundle,
+        packageName: package,
+        theme: theme,
+        colorMapper: colorMapper,
+      );
+    }
+    return _svg.SvgPicture(
+      loader,
+      key: key,
+      matchTextDirection: matchTextDirection,
+      width: width,
+      height: height,
+      fit: fit,
+      alignment: alignment,
+      allowDrawingOutsideViewBox: allowDrawingOutsideViewBox,
+      placeholderBuilder: placeholderBuilder,
+      semanticsLabel: semanticsLabel,
+      excludeFromSemantics: excludeFromSemantics,
+      colorFilter:
+          colorFilter ??
+          (color == null ? null : ColorFilter.mode(color, colorBlendMode)),
+      clipBehavior: clipBehavior,
+      cacheColorFilter: cacheColorFilter,
+    );
+  }
+
+  String get path => _assetName;
+
+  String get keyName => 'packages/lpdv_tv/$_assetName';
 }

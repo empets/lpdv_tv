@@ -59,7 +59,7 @@ class _OverviewScreenState extends State<OverviewScreen> {
           BottomNavigationBarItem(
             backgroundColor: MyColors.primaryBlue,
             icon: SvgPicture.asset(
-              Assets.images.iconLiving.iconLiving,
+              Assets.images.iconLiving.iconLiving.path,
               colorFilter: ColorFilter.mode(
                 _currentIndex == 1 ? MyColors.primaryOrange : Colors.white,
                 BlendMode.srcIn,
@@ -71,7 +71,7 @@ class _OverviewScreenState extends State<OverviewScreen> {
           BottomNavigationBarItem(
             backgroundColor: MyColors.primaryBlue,
             icon: SvgPicture.asset(
-              Assets.images.iconBible.iconBible,
+              Assets.images.iconBible.iconBible.path,
               colorFilter: ColorFilter.mode(
                 _currentIndex == 2 ? MyColors.primaryOrange : Colors.white,
                 BlendMode.srcIn,

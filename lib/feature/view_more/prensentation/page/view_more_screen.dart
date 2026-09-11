@@ -122,7 +122,7 @@ class _ViewMoreScreenState extends State<ViewMoreScreen> {
                             borderRadius: BorderRadius.circular(10.r),
                           ),
                           child: SvgPicture.asset(
-                            Assets.images.iconPlus.iconCalendar,
+                            Assets.images.iconPlus.iconCalendar.path,
                           ),
                         ),
                         SizedBox(width: 15.w),

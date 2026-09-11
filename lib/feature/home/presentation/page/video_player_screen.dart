@@ -5,7 +5,6 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:lpdv_tv/core/app_color/app_color.dart';
 import 'package:lpdv_tv/feature/home/presentation/page/home_screen.dart';
 import 'package:lpdv_tv/feature/home/presentation/page/widget/custome_moove_player.dart';
-import 'package:lpdv_tv/gen/assets.gen.dart';
 
 class VideoPlayerScreen extends StatelessWidget {
   const VideoPlayerScreen({super.key});

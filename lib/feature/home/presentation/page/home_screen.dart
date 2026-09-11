@@ -382,7 +382,10 @@ class HomeScreen extends StatelessWidget {
 class CustomeAppHeader extends StatelessWidget {
   const CustomeAppHeader({
     super.key,
+     this.isHomeScreen = true
   });
+
+  final bool isHomeScreen;
 
   @override
   Widget build(BuildContext context) {
@@ -413,13 +416,13 @@ class CustomeAppHeader extends StatelessWidget {
               ],
             ),
           ),
-    
+          if (isHomeScreen)
           Row(
             children: [
-              SvgPicture.asset(Assets.images.iconHome.iconSearch),
+              SvgPicture.asset(Assets.images.iconHome.iconSearch.path),
               SizedBox(width: 16.w),
               SvgPicture.asset(
-                Assets.images.iconHome.iconNotification,
+                Assets.images.iconHome.iconNotification.path,
               ),
               SizedBox(width: 7.w),
               // Container(
@@ -429,7 +432,7 @@ class CustomeAppHeader extends StatelessWidget {
               //         shape: BoxShape.circle,
               //       ),
               //       child: SvgPicture.asset(
-              //         Assets.images.iconHome.iconHeart,
+              //         assets.images.iconHome.iconHeart,
               //       ),
               //     )
               //     .animate(delay: 350.ms)

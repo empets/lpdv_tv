@@ -5,14 +5,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:lpdv_tv/core/app_color/app_color.dart';
-import 'package:lpdv_tv/feature/home/presentation/page/home_screen.dart';
 import 'package:media_kit/media_kit.dart';
 import 'package:media_kit_video/media_kit_video.dart';
-import 'package:media_kit_video/media_kit_video_controls/src/controls/adaptive.dart' as media_kit_video_controls;
-import 'package:flutter/material.dart';
-import 'package:media_kit/media_kit.dart';
-import 'package:media_kit_video/media_kit_video.dart';
-import 'dart:async';
+
 
 
 // class CustomVideoPlayer extends StatefulWidget {

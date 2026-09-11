@@ -75,10 +75,10 @@ class _LiveSreenState extends State<LiveSreen> {
 
                     Row(
                       children: [
-                        SvgPicture.asset(Assets.images.iconHome.iconSearch),
+                        SvgPicture.asset(Assets.images.iconHome.iconSearch.path),
                         SizedBox(width: 16.w),
                         SvgPicture.asset(
-                          Assets.images.iconHome.iconNotification,
+                          Assets.images.iconHome.iconNotification.path,
                         ),
                         SizedBox(width: 7.w),
                         Container(
@@ -88,7 +88,7 @@ class _LiveSreenState extends State<LiveSreen> {
                                 shape: BoxShape.circle,
                               ),
                               child: SvgPicture.asset(
-                                Assets.images.iconHome.iconHeart,
+                                Assets.images.iconHome.iconHeart.path,
                               ),
                             )
                             .animate(delay: 350.ms)
@@ -105,7 +105,6 @@ class _LiveSreenState extends State<LiveSreen> {
                   CustomVideoPlayer(
                     isLive: true,
                     url: 'https://www.w3schools.com/html/mov_bbb.mp4',
-                    autoPlay: _isPlaying,
                   ),
                   // Container(
                   //   decoration: BoxDecoration(
@@ -182,22 +181,7 @@ class _LiveSreenState extends State<LiveSreen> {
                   ),
               
 
-                  Positioned(
-                    bottom: 0,
-
-                    width: 0.95.sw,
-                    child: Container(
-                      padding: EdgeInsets.all(10.r),
-
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Icon(Icons.volume_up, color: MyColors.primaryWhite),
-                          Icon(Icons.fullscreen, color: MyColors.primaryWhite),
-                        ],
-                      ),
-                    ),
-                  ),
+             
                 ],
               ),
               Container(

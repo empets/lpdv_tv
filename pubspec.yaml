@@ -125,6 +125,29 @@ dev_dependencies:
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
 
+
+flutter_launcher_icons:
+  android: "launcher_icon"
+  ios: true
+  image_path: "assets/images/luncher_icon/icon_launcher.png"
+  remove_alpha_ios: true  # recommandé pour éviter le rejet App Store
+
+# to rebuild assets : flutter packages pub run build_runner build
+flutter_gen:
+  # output: lib/gen/ # Optional (default: lib/gen/)
+  # line_length: 80 # Optional (default: 80)
+
+  integrations:
+    flutter_svg: true
+    lottie: true
+
+  assets:
+    enabled: true
+
+    outputs:
+      package_parameter_enabled: true
+      class_name: assets
+
 # The following section is specific to Flutter packages.
 flutter:
 
@@ -139,6 +162,7 @@ flutter:
     - assets/images/icon_bible/
     - assets/images/icon_living/
     - assets/images/icon_plus/
+    - assets/images/luncher_icon/
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/to/resolution-aware-images
