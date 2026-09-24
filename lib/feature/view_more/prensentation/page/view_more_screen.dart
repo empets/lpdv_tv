@@ -14,23 +14,48 @@ class ViewMoreScreen extends StatefulWidget {
 }
 
 class _ViewMoreScreenState extends State<ViewMoreScreen> {
-
-
   List<Map<String, dynamic>> _getRecentSearches() => [
-   {'title': 'Émissions', 'subTitle': 'Tous nos programmes', 'icon': Assets.images.iconPlus.iconPlayeVideo.path},
-   {'title': 'Concerts & Événements', 'subTitle': 'Agenda et billetterie', 'icon': Assets.images.iconPlus.iconCalendar},
-   {'title': 'Librairie', 'subTitle': 'Livres, CD, DVD', 'icon': Assets.images.iconPlus.iconLibrayrie},
-   {'title': 'Intervenants', 'subTitle': 'Nos pasteurs et enseignants', 'icon': Assets.images.iconPlus.iconIntervenant},
-   {'title': 'Églises', 'subTitle': 'Trouver une église', 'icon': Assets.images.iconPlus.iconChurch},
-   {'title': 'Faire un don', 'subTitle': 'Soutenir la mission', 'icon': Assets.images.iconPlus.iconGift},
-   {'title': 'Demande de prière', 'subTitle': 'Nous confier vos besoins', 'icon': Assets.images.iconPlus.iconDemandePriere},
-   {'title': 'Devenir partenaire', 'subTitle': 'S\'engager avec nous', 'icon': Assets.images.iconPlus.iconPartenaire},
+    {
+      'title': 'Émissions',
+      'subTitle': 'Tous nos programmes',
+      'icon': Assets.images.iconPlus.iconPlayeVideo.path,
+    },
+    {
+      'title': 'Concerts & Événements',
+      'subTitle': 'Agenda et billetterie',
+      'icon': Assets.images.iconPlus.iconCalendar.path,
+    },
+    {
+      'title': 'Librairie',
+      'subTitle': 'Livres, CD, DVD',
+      'icon': Assets.images.iconPlus.iconLibrayrie.path,
+    },
+    {
+      'title': 'Intervenants',
+      'subTitle': 'Nos pasteurs et enseignants',
+      'icon': Assets.images.iconPlus.iconIntervenant.path,
+    },
+    {
+      'title': 'Églises',
+      'subTitle': 'Trouver une église',
+      'icon': Assets.images.iconPlus.iconChurch.path,
+    },
+    {
+      'title': 'Faire un don',
+      'subTitle': 'Soutenir la mission',
+      'icon': Assets.images.iconPlus.iconGift.path,
+    },
+    {
+      'title': 'Demande de prière',
+      'subTitle': 'Nous confier vos besoins',
+      'icon': Assets.images.iconPlus.iconDemandePriere.path,
+    },
+    {
+      'title': 'Devenir partenaire',
+      'subTitle': 'S\'engager avec nous',
+      'icon': Assets.images.iconPlus.iconPartenaire.path,
+    },
   ];
-
-
-
-
-
 
   @override
   Widget build(BuildContext context) {
@@ -42,7 +67,7 @@ class _ViewMoreScreenState extends State<ViewMoreScreen> {
         child: SingleChildScrollView(
           child: Column(
             children: [
-              CustomeAppHeader(),
+              CustomeAppHeader(isHomeScreen: false),
 
               SizedBox(height: 20.h),
 
@@ -66,18 +91,18 @@ class _ViewMoreScreenState extends State<ViewMoreScreen> {
                               color: MyColors.secondaryblue,
                               borderRadius: BorderRadius.circular(10.r),
                             ),
-                            child: index != 0 ? SvgPicture.asset(
-                            item['icon'],
-                            ) : Image.asset(
-                                 Assets.images.iconPlus.iconPlayeVideo.path,
-                            ),
+                            child: index != 0
+                                ? SvgPicture.asset(item['icon'])
+                                : Image.asset(
+                                    Assets.images.iconPlus.iconPlayeVideo.path,
+                                  ),
                           ),
                           SizedBox(width: 15.w),
                           Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Text(
-                               item['title'],
+                                item['title'],
                                 style: GoogleFonts.inter(
                                   color: MyColors.primaryWhite,
                                   fontSize: 15.sp,
@@ -96,8 +121,13 @@ class _ViewMoreScreenState extends State<ViewMoreScreen> {
                           ),
                         ],
                       ),
-                  
-                      Icon(Icons.arrow_forward_ios_rounded,size: 18.w,  color: MyColors.primaryGray,fontWeight: FontWeight.w600,)
+
+                      Icon(
+                        Icons.arrow_forward_ios_rounded,
+                        size: 18.w,
+                        color: MyColors.primaryGray,
+                        fontWeight: FontWeight.w600,
+                      ),
                     ],
                   ),
                 );
@@ -149,8 +179,13 @@ class _ViewMoreScreenState extends State<ViewMoreScreen> {
                         ),
                       ],
                     ),
-                
-                    Icon(Icons.arrow_forward_ios_rounded,size: 18.w,  color: MyColors.primaryGray,fontWeight: FontWeight.w600,)
+
+                    Icon(
+                      Icons.arrow_forward_ios_rounded,
+                      size: 18.w,
+                      color: MyColors.primaryGray,
+                      fontWeight: FontWeight.w600,
+                    ),
                   ],
                 ),
               ),

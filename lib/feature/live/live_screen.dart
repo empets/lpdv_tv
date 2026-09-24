@@ -18,28 +18,23 @@ class LiveSreen extends StatefulWidget {
 }
 
 class _LiveSreenState extends State<LiveSreen> {
+  bool _isPlaying = true;
 
-   bool _isPlaying = true;
-  
-    @override
+  @override
   void didUpdateWidget(covariant LiveSreen oldWidget) {
     super.didUpdateWidget(oldWidget);
 
-  
-    
     if (widget.isActive && !oldWidget.isActive) {
-     
-       setState(() {
+      setState(() {
         _isPlaying = true;
-       });
-        print('✅ J\'entre dans LiveScreen $_isPlaying');
+      });
+      print('✅ J\'entre dans LiveScreen $_isPlaying');
       // Init, fetch data, etc.
     } else if (!widget.isActive && oldWidget.isActive) {
-     
-       setState(() {
+      setState(() {
         _isPlaying = false;
-       });
-        print('❌ Je sors de LiveScreen $_isPlaying');
+      });
+      print('❌ Je sors de LiveScreen $_isPlaying');
     }
   }
 
@@ -75,11 +70,6 @@ class _LiveSreenState extends State<LiveSreen> {
 
                     Row(
                       children: [
-                        SvgPicture.asset(Assets.images.iconHome.iconSearch.path),
-                        SizedBox(width: 16.w),
-                        SvgPicture.asset(
-                          Assets.images.iconHome.iconNotification.path,
-                        ),
                         SizedBox(width: 7.w),
                         Container(
                               padding: EdgeInsets.all(5.w),
@@ -174,14 +164,9 @@ class _LiveSreenState extends State<LiveSreen> {
                             ),
                           ],
                         ),
-
-                      
                       ],
                     ),
                   ),
-              
-
-             
                 ],
               ),
               Container(

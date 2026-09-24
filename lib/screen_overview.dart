@@ -23,79 +23,75 @@ class _OverviewScreenState extends State<OverviewScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: MyColors.primaryBlue,
-      appBar: AppBar(
-        backgroundColor: MyColors.primaryBlue,
-        elevation: 0,
-      ),
+      appBar: AppBar(backgroundColor: MyColors.primaryBlue, elevation: 0),
       body: SafeArea(
         top: true,
         child: RefreshIndicator(
           onRefresh: () async {},
           color: MyColors.primaryOrange,
-          child: IndexedStack(index: _currentIndex, children: [HomeScreen(), LiveSreen(isActive: _currentIndex == 1), Container(), ViewMoreScreen()]),
+          child: IndexedStack(
+            index: _currentIndex,
+            children: [
+              HomeScreen(),
+              LiveSreen(isActive: _currentIndex == 1),
+              ViewMoreScreen(),
+            ],
+          ),
         ),
       ),
-      bottomNavigationBar: BottomNavigationBar(
-        backgroundColor: MyColors.primaryBlue,
-        selectedItemColor: MyColors.primaryOrange,
-        unselectedItemColor: Colors.white,
-        elevation: 0,
-        selectedLabelStyle: GoogleFonts.inter(
-          color: MyColors.primaryOrange,
-          fontSize: 12.sp,
-          fontWeight: FontWeight.w700,
-        ),
-        unselectedLabelStyle: GoogleFonts.inter(
-          color: Colors.white,
-          fontSize: 11.sp,
-          fontWeight: FontWeight.w500,
-        ),
-        items: [
-          BottomNavigationBarItem(
-            backgroundColor: MyColors.primaryBlue,
-            icon: Icon(Icons.home),
-            label: 'Home',
-          ),
-          BottomNavigationBarItem(
-            backgroundColor: MyColors.primaryBlue,
-            icon: SvgPicture.asset(
-              Assets.images.iconLiving.iconLiving.path,
-              colorFilter: ColorFilter.mode(
-                _currentIndex == 1 ? MyColors.primaryOrange : Colors.white,
-                BlendMode.srcIn,
-              ),
-            ),
-            label: 'En direct',
-          ),
-      
-          BottomNavigationBarItem(
-            backgroundColor: MyColors.primaryBlue,
-            icon: SvgPicture.asset(
-              Assets.images.iconBible.iconBible.path,
-              colorFilter: ColorFilter.mode(
-                _currentIndex == 2 ? MyColors.primaryOrange : Colors.white,
-                BlendMode.srcIn,
-              ),
-            ),
-            label: 'Bible',
-          ),
-          BottomNavigationBarItem(
-            backgroundColor: MyColors.primaryBlue,
-            icon: Icon(Icons.more_vert_outlined),
-            label: 'Plus',
-          ),
-        ],
-
-        currentIndex: _currentIndex,
-        onTap: (index) {
-          setState(() {
-            _currentIndex = index;
-          });
-        },
-      ).animate(delay: 350.ms).fadeIn(duration: 600.ms).slideY(
-                    begin: 0.2,
-                    end: 0,
+      bottomNavigationBar:
+          BottomNavigationBar(
+                backgroundColor: MyColors.primaryBlue,
+                selectedItemColor: MyColors.primaryOrange,
+                unselectedItemColor: Colors.white,
+                elevation: 0,
+                selectedLabelStyle: GoogleFonts.inter(
+                  color: MyColors.primaryOrange,
+                  fontSize: 12.sp,
+                  fontWeight: FontWeight.w700,
+                ),
+                unselectedLabelStyle: GoogleFonts.inter(
+                  color: Colors.white,
+                  fontSize: 11.sp,
+                  fontWeight: FontWeight.w500,
+                ),
+                items: [
+                  BottomNavigationBarItem(
+                    backgroundColor: MyColors.primaryBlue,
+                    icon: Icon(Icons.home),
+                    label: 'Home',
                   ),
+                  BottomNavigationBarItem(
+                    backgroundColor: MyColors.primaryBlue,
+                    icon: SvgPicture.asset(
+                      Assets.images.iconLiving.iconLiving.path,
+                      colorFilter: ColorFilter.mode(
+                        _currentIndex == 1
+                            ? MyColors.primaryOrange
+                            : Colors.white,
+                        BlendMode.srcIn,
+                      ),
+                    ),
+                    label: 'En direct',
+                  ),
+
+                  BottomNavigationBarItem(
+                    backgroundColor: MyColors.primaryBlue,
+                    icon: Icon(Icons.more_vert_outlined),
+                    label: 'Plus',
+                  ),
+                ],
+
+                currentIndex: _currentIndex,
+                onTap: (index) {
+                  setState(() {
+                    _currentIndex = index;
+                  });
+                },
+              )
+              .animate(delay: 350.ms)
+              .fadeIn(duration: 600.ms)
+              .slideY(begin: 0.2, end: 0),
     );
   }
 }
